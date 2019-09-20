@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * PublicPriceHistoryResponseData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-02T22:22:40.698-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-18T12:37:05.120-04:00")
 public class PublicPriceHistoryResponseData {
   @SerializedName("price_history")
   private List<PublicPriceHistoryResponseDataPriceHistory> priceHistory = new ArrayList<PublicPriceHistoryResponseDataPriceHistory>();

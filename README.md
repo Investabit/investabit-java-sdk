@@ -2,7 +2,7 @@
 
 Investabit
 - API version: 
-  - Build date: 2019-08-02T22:22:40.698-04:00
+  - Build date: 2019-09-18T12:37:05.120-04:00
 
 The Investabit API allows for access to all of the public facing services provided, including market data and forecasts.  ## General Overview  1. All API methods will be built to adhere to RESTful best practices as closely as possible. As such, all API calls will be made via the standard HTTP protocol using the GET/POST/PUT/DELETE request types.  2. Every request returns the status as a JSON response with the following   - success, true if it was successful   - code, the http status code (also in the response header)          200 if response is successful          400 if bad request          401 if authorization JWT is wrong or limit exceeded          404 wrong route          500 for any internal errors  - status, the status of the request, default **success**  - errors, an array of any relevant error details  3. For any requests that are not successful an error message is specified and returned as an array for the **errors** key in the JSON response.  4. All authentication uses JSON Web Tokens (JWT), which is set as the **Authorization** entry in the header, see the following for more details.     * http://jwt.io     * https://scotch.io/tutorials/the-anatomy-of-a-json-web-token
 
@@ -85,12 +85,12 @@ public class PublicApiExample {
     public static void main(String[] args) {
         
         PublicApi apiInstance = new PublicApi();
-        String symbol = "\"btc\""; // String | The cryptocurrency symbol, provide `all` to get every symbol.
+        String symbol = "btc"; // String | The cryptocurrency symbol.
         try {
-            PublicCurrentResponse result = apiInstance.v1PublicCurrentSymbolGet(symbol);
+            PublicPriceChangeResponse result = apiInstance.v1PublicPriceChangeSymbolGet(symbol);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PublicApi#v1PublicCurrentSymbolGet");
+            System.err.println("Exception when calling PublicApi#v1PublicPriceChangeSymbolGet");
             e.printStackTrace();
         }
     }
@@ -104,8 +104,8 @@ All URIs are relative to *https://api.investabit.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*PublicApi* | [**v1PublicCurrentSymbolGet**](docs/PublicApi.md#v1PublicCurrentSymbolGet) | **GET** /v1/public/current/{symbol} | Current
 *PublicApi* | [**v1PublicPriceChangeSymbolGet**](docs/PublicApi.md#v1PublicPriceChangeSymbolGet) | **GET** /v1/public/price-change/{symbol} | Price Change
+*PublicApi* | [**v1PublicPriceCurrentSymbolGet**](docs/PublicApi.md#v1PublicPriceCurrentSymbolGet) | **GET** /v1/public/price-current/{symbol} | Price Current
 *PublicApi* | [**v1PublicPriceHistorySymbolPeriodIntervalGet**](docs/PublicApi.md#v1PublicPriceHistorySymbolPeriodIntervalGet) | **GET** /v1/public/price-history/{symbol}/{period}/{interval} | Price History
 *PublicApi* | [**v1PublicSymbolsGet**](docs/PublicApi.md#v1PublicSymbolsGet) | **GET** /v1/public/symbols | Symbols
 *PublicApi* | [**v1PublicTrendSymbolGet**](docs/PublicApi.md#v1PublicTrendSymbolGet) | **GET** /v1/public/trend/{symbol} | Trend
@@ -113,16 +113,16 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [CurrentRoute](docs/CurrentRoute.md)
  - [DefaultResponse](docs/DefaultResponse.md)
  - [PriceChangeRoute](docs/PriceChangeRoute.md)
+ - [PriceCurrentRoute](docs/PriceCurrentRoute.md)
  - [PriceHistoryRoute](docs/PriceHistoryRoute.md)
- - [PublicCurrentResponse](docs/PublicCurrentResponse.md)
- - [PublicCurrentResponseData](docs/PublicCurrentResponseData.md)
- - [PublicCurrentResponseDataCurrent](docs/PublicCurrentResponseDataCurrent.md)
  - [PublicPriceChangeResponse](docs/PublicPriceChangeResponse.md)
  - [PublicPriceChangeResponseData](docs/PublicPriceChangeResponseData.md)
  - [PublicPriceChangeResponseDataPriceChange](docs/PublicPriceChangeResponseDataPriceChange.md)
+ - [PublicPriceCurrentResponse](docs/PublicPriceCurrentResponse.md)
+ - [PublicPriceCurrentResponseData](docs/PublicPriceCurrentResponseData.md)
+ - [PublicPriceCurrentResponseDataCurrent](docs/PublicPriceCurrentResponseDataCurrent.md)
  - [PublicPriceHistoryResponse](docs/PublicPriceHistoryResponse.md)
  - [PublicPriceHistoryResponseData](docs/PublicPriceHistoryResponseData.md)
  - [PublicPriceHistoryResponseDataHistory](docs/PublicPriceHistoryResponseDataHistory.md)

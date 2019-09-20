@@ -28,8 +28,14 @@ import java.math.BigDecimal;
 /**
  * PublicTrendResponseDataTrend
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-02T22:22:40.698-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-18T12:37:05.120-04:00")
 public class PublicTrendResponseDataTrend {
+  @SerializedName("time_start")
+  private BigDecimal timeStart = null;
+
+  @SerializedName("time_end")
+  private BigDecimal timeEnd = null;
+
   @SerializedName("interval")
   private String interval = null;
 
@@ -44,6 +50,42 @@ public class PublicTrendResponseDataTrend {
 
   @SerializedName("confidence")
   private BigDecimal confidence = null;
+
+  public PublicTrendResponseDataTrend timeStart(BigDecimal timeStart) {
+    this.timeStart = timeStart;
+    return this;
+  }
+
+   /**
+   * Get timeStart
+   * @return timeStart
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public BigDecimal getTimeStart() {
+    return timeStart;
+  }
+
+  public void setTimeStart(BigDecimal timeStart) {
+    this.timeStart = timeStart;
+  }
+
+  public PublicTrendResponseDataTrend timeEnd(BigDecimal timeEnd) {
+    this.timeEnd = timeEnd;
+    return this;
+  }
+
+   /**
+   * Get timeEnd
+   * @return timeEnd
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public BigDecimal getTimeEnd() {
+    return timeEnd;
+  }
+
+  public void setTimeEnd(BigDecimal timeEnd) {
+    this.timeEnd = timeEnd;
+  }
 
   public PublicTrendResponseDataTrend interval(String interval) {
     this.interval = interval;
@@ -145,7 +187,9 @@ public class PublicTrendResponseDataTrend {
       return false;
     }
     PublicTrendResponseDataTrend publicTrendResponseDataTrend = (PublicTrendResponseDataTrend) o;
-    return Objects.equals(this.interval, publicTrendResponseDataTrend.interval) &&
+    return Objects.equals(this.timeStart, publicTrendResponseDataTrend.timeStart) &&
+        Objects.equals(this.timeEnd, publicTrendResponseDataTrend.timeEnd) &&
+        Objects.equals(this.interval, publicTrendResponseDataTrend.interval) &&
         Objects.equals(this.weightedPrice, publicTrendResponseDataTrend.weightedPrice) &&
         Objects.equals(this.changeUsd, publicTrendResponseDataTrend.changeUsd) &&
         Objects.equals(this.changePct, publicTrendResponseDataTrend.changePct) &&
@@ -154,7 +198,7 @@ public class PublicTrendResponseDataTrend {
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, weightedPrice, changeUsd, changePct, confidence);
+    return Objects.hash(timeStart, timeEnd, interval, weightedPrice, changeUsd, changePct, confidence);
   }
 
 
@@ -163,6 +207,8 @@ public class PublicTrendResponseDataTrend {
     StringBuilder sb = new StringBuilder();
     sb.append("class PublicTrendResponseDataTrend {\n");
     
+    sb.append("    timeStart: ").append(toIndentedString(timeStart)).append("\n");
+    sb.append("    timeEnd: ").append(toIndentedString(timeEnd)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    weightedPrice: ").append(toIndentedString(weightedPrice)).append("\n");
     sb.append("    changeUsd: ").append(toIndentedString(changeUsd)).append("\n");

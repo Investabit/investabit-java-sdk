@@ -1,5 +1,5 @@
 
-# PublicCurrentResponse
+# PublicPriceCurrentResponse
 
 ## Properties
 Name | Type | Description | Notes
@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **success** | **Boolean** |  | 
 **code** | **Integer** |  | 
 **status** | **String** |  | 
-**data** | [**PublicCurrentResponseData**](PublicCurrentResponseData.md) |  | 
+**data** | [**PublicPriceCurrentResponseData**](PublicPriceCurrentResponseData.md) |  | 
 **errors** | **List&lt;Object&gt;** |  |  [optional]
 
 

@@ -22,25 +22,25 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.PublicCurrentResponseDataCurrent;
+import io.swagger.client.model.PublicPriceCurrentResponseDataCurrent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PublicCurrentResponseData
+ * PublicPriceCurrentResponseData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-02T22:22:40.698-04:00")
-public class PublicCurrentResponseData {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-18T12:37:05.120-04:00")
+public class PublicPriceCurrentResponseData {
   @SerializedName("current")
-  private List<PublicCurrentResponseDataCurrent> current = new ArrayList<PublicCurrentResponseDataCurrent>();
+  private List<PublicPriceCurrentResponseDataCurrent> current = new ArrayList<PublicPriceCurrentResponseDataCurrent>();
 
-  public PublicCurrentResponseData current(List<PublicCurrentResponseDataCurrent> current) {
+  public PublicPriceCurrentResponseData current(List<PublicPriceCurrentResponseDataCurrent> current) {
     this.current = current;
     return this;
   }
 
-  public PublicCurrentResponseData addCurrentItem(PublicCurrentResponseDataCurrent currentItem) {
+  public PublicPriceCurrentResponseData addCurrentItem(PublicPriceCurrentResponseDataCurrent currentItem) {
     this.current.add(currentItem);
     return this;
   }
@@ -50,11 +50,11 @@ public class PublicCurrentResponseData {
    * @return current
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<PublicCurrentResponseDataCurrent> getCurrent() {
+  public List<PublicPriceCurrentResponseDataCurrent> getCurrent() {
     return current;
   }
 
-  public void setCurrent(List<PublicCurrentResponseDataCurrent> current) {
+  public void setCurrent(List<PublicPriceCurrentResponseDataCurrent> current) {
     this.current = current;
   }
 
@@ -67,8 +67,8 @@ public class PublicCurrentResponseData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PublicCurrentResponseData publicCurrentResponseData = (PublicCurrentResponseData) o;
-    return Objects.equals(this.current, publicCurrentResponseData.current);
+    PublicPriceCurrentResponseData publicPriceCurrentResponseData = (PublicPriceCurrentResponseData) o;
+    return Objects.equals(this.current, publicPriceCurrentResponseData.current);
   }
 
   @Override
@@ -80,7 +80,7 @@ public class PublicCurrentResponseData {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PublicCurrentResponseData {\n");
+    sb.append("class PublicPriceCurrentResponseData {\n");
     
     sb.append("    current: ").append(toIndentedString(current)).append("\n");
     sb.append("}");

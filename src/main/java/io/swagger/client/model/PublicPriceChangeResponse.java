@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * PublicPriceChangeResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-02T22:22:40.698-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-18T12:37:05.120-04:00")
 public class PublicPriceChangeResponse {
   @SerializedName("success")
   private Boolean success = null;

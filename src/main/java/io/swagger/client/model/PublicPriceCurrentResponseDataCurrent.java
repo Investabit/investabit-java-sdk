@@ -26,10 +26,10 @@ import java.io.IOException;
 import java.math.BigDecimal;
 
 /**
- * PublicCurrentResponseDataCurrent
+ * PublicPriceCurrentResponseDataCurrent
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-02T22:22:40.698-04:00")
-public class PublicCurrentResponseDataCurrent {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-18T12:37:05.120-04:00")
+public class PublicPriceCurrentResponseDataCurrent {
   @SerializedName("symbol")
   private String symbol = null;
 
@@ -45,7 +45,7 @@ public class PublicCurrentResponseDataCurrent {
   @SerializedName("change_pct")
   private BigDecimal changePct = null;
 
-  public PublicCurrentResponseDataCurrent symbol(String symbol) {
+  public PublicPriceCurrentResponseDataCurrent symbol(String symbol) {
     this.symbol = symbol;
     return this;
   }
@@ -63,7 +63,7 @@ public class PublicCurrentResponseDataCurrent {
     this.symbol = symbol;
   }
 
-  public PublicCurrentResponseDataCurrent name(String name) {
+  public PublicPriceCurrentResponseDataCurrent name(String name) {
     this.name = name;
     return this;
   }
@@ -81,7 +81,7 @@ public class PublicCurrentResponseDataCurrent {
     this.name = name;
   }
 
-  public PublicCurrentResponseDataCurrent price(BigDecimal price) {
+  public PublicPriceCurrentResponseDataCurrent price(BigDecimal price) {
     this.price = price;
     return this;
   }
@@ -99,7 +99,7 @@ public class PublicCurrentResponseDataCurrent {
     this.price = price;
   }
 
-  public PublicCurrentResponseDataCurrent changeUsd(BigDecimal changeUsd) {
+  public PublicPriceCurrentResponseDataCurrent changeUsd(BigDecimal changeUsd) {
     this.changeUsd = changeUsd;
     return this;
   }
@@ -117,7 +117,7 @@ public class PublicCurrentResponseDataCurrent {
     this.changeUsd = changeUsd;
   }
 
-  public PublicCurrentResponseDataCurrent changePct(BigDecimal changePct) {
+  public PublicPriceCurrentResponseDataCurrent changePct(BigDecimal changePct) {
     this.changePct = changePct;
     return this;
   }
@@ -144,12 +144,12 @@ public class PublicCurrentResponseDataCurrent {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PublicCurrentResponseDataCurrent publicCurrentResponseDataCurrent = (PublicCurrentResponseDataCurrent) o;
-    return Objects.equals(this.symbol, publicCurrentResponseDataCurrent.symbol) &&
-        Objects.equals(this.name, publicCurrentResponseDataCurrent.name) &&
-        Objects.equals(this.price, publicCurrentResponseDataCurrent.price) &&
-        Objects.equals(this.changeUsd, publicCurrentResponseDataCurrent.changeUsd) &&
-        Objects.equals(this.changePct, publicCurrentResponseDataCurrent.changePct);
+    PublicPriceCurrentResponseDataCurrent publicPriceCurrentResponseDataCurrent = (PublicPriceCurrentResponseDataCurrent) o;
+    return Objects.equals(this.symbol, publicPriceCurrentResponseDataCurrent.symbol) &&
+        Objects.equals(this.name, publicPriceCurrentResponseDataCurrent.name) &&
+        Objects.equals(this.price, publicPriceCurrentResponseDataCurrent.price) &&
+        Objects.equals(this.changeUsd, publicPriceCurrentResponseDataCurrent.changeUsd) &&
+        Objects.equals(this.changePct, publicPriceCurrentResponseDataCurrent.changePct);
   }
 
   @Override
@@ -161,7 +161,7 @@ public class PublicCurrentResponseDataCurrent {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PublicCurrentResponseDataCurrent {\n");
+    sb.append("class PublicPriceCurrentResponseDataCurrent {\n");
     
     sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

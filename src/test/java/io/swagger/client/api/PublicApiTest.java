@@ -15,8 +15,8 @@ package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
 import io.swagger.client.model.DefaultResponse;
-import io.swagger.client.model.PublicCurrentResponse;
 import io.swagger.client.model.PublicPriceChangeResponse;
+import io.swagger.client.model.PublicPriceCurrentResponse;
 import io.swagger.client.model.PublicPriceHistoryResponse;
 import io.swagger.client.model.PublicSymbolsResponse;
 import io.swagger.client.model.PublicTrendResponse;
@@ -38,22 +38,6 @@ public class PublicApiTest {
 
     
     /**
-     * Current
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void v1PublicCurrentSymbolGetTest() throws ApiException {
-        String symbol = null;
-        PublicCurrentResponse response = api.v1PublicCurrentSymbolGet(symbol);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Price Change
      *
      * 
@@ -65,6 +49,22 @@ public class PublicApiTest {
     public void v1PublicPriceChangeSymbolGetTest() throws ApiException {
         String symbol = null;
         PublicPriceChangeResponse response = api.v1PublicPriceChangeSymbolGet(symbol);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Price Current
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void v1PublicPriceCurrentSymbolGetTest() throws ApiException {
+        String symbol = null;
+        PublicPriceCurrentResponse response = api.v1PublicPriceCurrentSymbolGet(symbol);
 
         // TODO: test validations
     }

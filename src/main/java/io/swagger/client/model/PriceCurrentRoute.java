@@ -17,10 +17,10 @@ import java.util.Objects;
 import java.util.Arrays;
 
 /**
- * CurrentRoute
+ * PriceCurrentRoute
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-02T22:22:40.698-04:00")
-public class CurrentRoute {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-18T12:37:05.120-04:00")
+public class PriceCurrentRoute {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -42,7 +42,7 @@ public class CurrentRoute {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CurrentRoute {\n");
+    sb.append("class PriceCurrentRoute {\n");
     
     sb.append("}");
     return sb.toString();

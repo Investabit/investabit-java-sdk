@@ -28,8 +28,8 @@ import java.io.IOException;
 
 
 import io.swagger.client.model.DefaultResponse;
-import io.swagger.client.model.PublicCurrentResponse;
 import io.swagger.client.model.PublicPriceChangeResponse;
+import io.swagger.client.model.PublicPriceCurrentResponse;
 import io.swagger.client.model.PublicPriceHistoryResponse;
 import io.swagger.client.model.PublicSymbolsResponse;
 import io.swagger.client.model.PublicTrendResponse;
@@ -59,129 +59,6 @@ public class PublicApi {
         this.apiClient = apiClient;
     }
 
-    /**
-     * Build call for v1PublicCurrentSymbolGet
-     * @param symbol The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol. (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call v1PublicCurrentSymbolGetCall(String symbol, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v1/public/current/{symbol}"
-            .replaceAll("\\{" + "symbol" + "\\}", apiClient.escapeString(symbol.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call v1PublicCurrentSymbolGetValidateBeforeCall(String symbol, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'symbol' is set
-        if (symbol == null) {
-            throw new ApiException("Missing the required parameter 'symbol' when calling v1PublicCurrentSymbolGet(Async)");
-        }
-        
-
-        com.squareup.okhttp.Call call = v1PublicCurrentSymbolGetCall(symbol, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Current
-     * 
-     * @param symbol The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol. (required)
-     * @return PublicCurrentResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public PublicCurrentResponse v1PublicCurrentSymbolGet(String symbol) throws ApiException {
-        ApiResponse<PublicCurrentResponse> resp = v1PublicCurrentSymbolGetWithHttpInfo(symbol);
-        return resp.getData();
-    }
-
-    /**
-     * Current
-     * 
-     * @param symbol The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol. (required)
-     * @return ApiResponse&lt;PublicCurrentResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<PublicCurrentResponse> v1PublicCurrentSymbolGetWithHttpInfo(String symbol) throws ApiException {
-        com.squareup.okhttp.Call call = v1PublicCurrentSymbolGetValidateBeforeCall(symbol, null, null);
-        Type localVarReturnType = new TypeToken<PublicCurrentResponse>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Current (asynchronously)
-     * 
-     * @param symbol The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol. (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call v1PublicCurrentSymbolGetAsync(String symbol, final ApiCallback<PublicCurrentResponse> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = v1PublicCurrentSymbolGetValidateBeforeCall(symbol, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PublicCurrentResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
     /**
      * Build call for v1PublicPriceChangeSymbolGet
      * @param symbol The cryptocurrency symbol. (required)
@@ -302,6 +179,129 @@ public class PublicApi {
 
         com.squareup.okhttp.Call call = v1PublicPriceChangeSymbolGetValidateBeforeCall(symbol, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PublicPriceChangeResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for v1PublicPriceCurrentSymbolGet
+     * @param symbol The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol. (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call v1PublicPriceCurrentSymbolGetCall(String symbol, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/public/price-current/{symbol}"
+            .replaceAll("\\{" + "symbol" + "\\}", apiClient.escapeString(symbol.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call v1PublicPriceCurrentSymbolGetValidateBeforeCall(String symbol, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'symbol' is set
+        if (symbol == null) {
+            throw new ApiException("Missing the required parameter 'symbol' when calling v1PublicPriceCurrentSymbolGet(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = v1PublicPriceCurrentSymbolGetCall(symbol, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Price Current
+     * 
+     * @param symbol The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol. (required)
+     * @return PublicPriceCurrentResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PublicPriceCurrentResponse v1PublicPriceCurrentSymbolGet(String symbol) throws ApiException {
+        ApiResponse<PublicPriceCurrentResponse> resp = v1PublicPriceCurrentSymbolGetWithHttpInfo(symbol);
+        return resp.getData();
+    }
+
+    /**
+     * Price Current
+     * 
+     * @param symbol The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol. (required)
+     * @return ApiResponse&lt;PublicPriceCurrentResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PublicPriceCurrentResponse> v1PublicPriceCurrentSymbolGetWithHttpInfo(String symbol) throws ApiException {
+        com.squareup.okhttp.Call call = v1PublicPriceCurrentSymbolGetValidateBeforeCall(symbol, null, null);
+        Type localVarReturnType = new TypeToken<PublicPriceCurrentResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Price Current (asynchronously)
+     * 
+     * @param symbol The cryptocurrency symbol, provide &#x60;all&#x60; to get every symbol. (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call v1PublicPriceCurrentSymbolGetAsync(String symbol, final ApiCallback<PublicPriceCurrentResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = v1PublicPriceCurrentSymbolGetValidateBeforeCall(symbol, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PublicPriceCurrentResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

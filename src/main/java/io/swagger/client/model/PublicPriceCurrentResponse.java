@@ -22,16 +22,16 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.PublicCurrentResponseData;
+import io.swagger.client.model.PublicPriceCurrentResponseData;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PublicCurrentResponse
+ * PublicPriceCurrentResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-08-02T22:22:40.698-04:00")
-public class PublicCurrentResponse {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-18T12:37:05.120-04:00")
+public class PublicPriceCurrentResponse {
   @SerializedName("success")
   private Boolean success = null;
 
@@ -42,12 +42,12 @@ public class PublicCurrentResponse {
   private String status = null;
 
   @SerializedName("data")
-  private PublicCurrentResponseData data = null;
+  private PublicPriceCurrentResponseData data = null;
 
   @SerializedName("errors")
   private List<Object> errors = null;
 
-  public PublicCurrentResponse success(Boolean success) {
+  public PublicPriceCurrentResponse success(Boolean success) {
     this.success = success;
     return this;
   }
@@ -65,7 +65,7 @@ public class PublicCurrentResponse {
     this.success = success;
   }
 
-  public PublicCurrentResponse code(Integer code) {
+  public PublicPriceCurrentResponse code(Integer code) {
     this.code = code;
     return this;
   }
@@ -83,7 +83,7 @@ public class PublicCurrentResponse {
     this.code = code;
   }
 
-  public PublicCurrentResponse status(String status) {
+  public PublicPriceCurrentResponse status(String status) {
     this.status = status;
     return this;
   }
@@ -101,7 +101,7 @@ public class PublicCurrentResponse {
     this.status = status;
   }
 
-  public PublicCurrentResponse data(PublicCurrentResponseData data) {
+  public PublicPriceCurrentResponse data(PublicPriceCurrentResponseData data) {
     this.data = data;
     return this;
   }
@@ -111,20 +111,20 @@ public class PublicCurrentResponse {
    * @return data
   **/
   @ApiModelProperty(required = true, value = "")
-  public PublicCurrentResponseData getData() {
+  public PublicPriceCurrentResponseData getData() {
     return data;
   }
 
-  public void setData(PublicCurrentResponseData data) {
+  public void setData(PublicPriceCurrentResponseData data) {
     this.data = data;
   }
 
-  public PublicCurrentResponse errors(List<Object> errors) {
+  public PublicPriceCurrentResponse errors(List<Object> errors) {
     this.errors = errors;
     return this;
   }
 
-  public PublicCurrentResponse addErrorsItem(Object errorsItem) {
+  public PublicPriceCurrentResponse addErrorsItem(Object errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<Object>();
     }
@@ -154,12 +154,12 @@ public class PublicCurrentResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PublicCurrentResponse publicCurrentResponse = (PublicCurrentResponse) o;
-    return Objects.equals(this.success, publicCurrentResponse.success) &&
-        Objects.equals(this.code, publicCurrentResponse.code) &&
-        Objects.equals(this.status, publicCurrentResponse.status) &&
-        Objects.equals(this.data, publicCurrentResponse.data) &&
-        Objects.equals(this.errors, publicCurrentResponse.errors);
+    PublicPriceCurrentResponse publicPriceCurrentResponse = (PublicPriceCurrentResponse) o;
+    return Objects.equals(this.success, publicPriceCurrentResponse.success) &&
+        Objects.equals(this.code, publicPriceCurrentResponse.code) &&
+        Objects.equals(this.status, publicPriceCurrentResponse.status) &&
+        Objects.equals(this.data, publicPriceCurrentResponse.data) &&
+        Objects.equals(this.errors, publicPriceCurrentResponse.errors);
   }
 
   @Override
@@ -171,7 +171,7 @@ public class PublicCurrentResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PublicCurrentResponse {\n");
+    sb.append("class PublicPriceCurrentResponse {\n");
     
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");

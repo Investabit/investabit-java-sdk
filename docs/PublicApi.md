@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**v1PublicPriceHistorySymbolPeriodIntervalGet**](PublicApi.md#v1PublicPriceHistorySymbolPeriodIntervalGet) | **GET** /v1/public/price-history/{symbol}/{period}/{interval} | Price History
 [**v1PublicSymbolsGet**](PublicApi.md#v1PublicSymbolsGet) | **GET** /v1/public/symbols | Symbols
 [**v1PublicTrendSymbolGet**](PublicApi.md#v1PublicTrendSymbolGet) | **GET** /v1/public/trend/{symbol} | Trend
+[**v1PublicWaitingListPost**](PublicApi.md#v1PublicWaitingListPost) | **POST** /v1/public/waiting-list | Waiting List
 
 
 <a name="v1PublicPriceChangeSymbolGet"></a>
@@ -226,6 +227,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PublicTrendResponse**](PublicTrendResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="v1PublicWaitingListPost"></a>
+# **v1PublicWaitingListPost**
+> DefaultResponse v1PublicWaitingListPost(body)
+
+Waiting List
+
+Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.PublicApi;
+
+
+PublicApi apiInstance = new PublicApi();
+PublicWaitingListRequest body = new PublicWaitingListRequest(); // PublicWaitingListRequest | 
+try {
+    DefaultResponse result = apiInstance.v1PublicWaitingListPost(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PublicApi#v1PublicWaitingListPost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PublicWaitingListRequest**](PublicWaitingListRequest.md)|  | [optional]
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
 
 ### Authorization
 

@@ -25,17 +25,23 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * PublicSymbolsResponseDataSymbols
+ * PublicWaitingListRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-22T22:41:05.576-04:00")
-public class PublicSymbolsResponseDataSymbols {
+public class PublicWaitingListRequest {
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("symbol")
-  private String symbol = null;
+  @SerializedName("email")
+  private String email = null;
 
-  public PublicSymbolsResponseDataSymbols name(String name) {
+  @SerializedName("service")
+  private String service = null;
+
+  @SerializedName("list_id")
+  private String listId = null;
+
+  public PublicWaitingListRequest name(String name) {
     this.name = name;
     return this;
   }
@@ -44,7 +50,7 @@ public class PublicSymbolsResponseDataSymbols {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public String getName() {
     return name;
   }
@@ -53,22 +59,58 @@ public class PublicSymbolsResponseDataSymbols {
     this.name = name;
   }
 
-  public PublicSymbolsResponseDataSymbols symbol(String symbol) {
-    this.symbol = symbol;
+  public PublicWaitingListRequest email(String email) {
+    this.email = email;
     return this;
   }
 
    /**
-   * Get symbol
-   * @return symbol
+   * Get email
+   * @return email
   **/
   @ApiModelProperty(required = true, value = "")
-  public String getSymbol() {
-    return symbol;
+  public String getEmail() {
+    return email;
   }
 
-  public void setSymbol(String symbol) {
-    this.symbol = symbol;
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public PublicWaitingListRequest service(String service) {
+    this.service = service;
+    return this;
+  }
+
+   /**
+   * Get service
+   * @return service
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getService() {
+    return service;
+  }
+
+  public void setService(String service) {
+    this.service = service;
+  }
+
+  public PublicWaitingListRequest listId(String listId) {
+    this.listId = listId;
+    return this;
+  }
+
+   /**
+   * Get listId
+   * @return listId
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getListId() {
+    return listId;
+  }
+
+  public void setListId(String listId) {
+    this.listId = listId;
   }
 
 
@@ -80,24 +122,28 @@ public class PublicSymbolsResponseDataSymbols {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PublicSymbolsResponseDataSymbols publicSymbolsResponseDataSymbols = (PublicSymbolsResponseDataSymbols) o;
-    return Objects.equals(this.name, publicSymbolsResponseDataSymbols.name) &&
-        Objects.equals(this.symbol, publicSymbolsResponseDataSymbols.symbol);
+    PublicWaitingListRequest publicWaitingListRequest = (PublicWaitingListRequest) o;
+    return Objects.equals(this.name, publicWaitingListRequest.name) &&
+        Objects.equals(this.email, publicWaitingListRequest.email) &&
+        Objects.equals(this.service, publicWaitingListRequest.service) &&
+        Objects.equals(this.listId, publicWaitingListRequest.listId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, symbol);
+    return Objects.hash(name, email, service, listId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PublicSymbolsResponseDataSymbols {\n");
+    sb.append("class PublicWaitingListRequest {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    service: ").append(toIndentedString(service)).append("\n");
+    sb.append("    listId: ").append(toIndentedString(listId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

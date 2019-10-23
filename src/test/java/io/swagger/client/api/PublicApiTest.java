@@ -20,6 +20,7 @@ import io.swagger.client.model.PublicPriceCurrentResponse;
 import io.swagger.client.model.PublicPriceHistoryResponse;
 import io.swagger.client.model.PublicSymbolsResponse;
 import io.swagger.client.model.PublicTrendResponse;
+import io.swagger.client.model.PublicWaitingListRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -114,6 +115,22 @@ public class PublicApiTest {
     public void v1PublicTrendSymbolGetTest() throws ApiException {
         String symbol = null;
         PublicTrendResponse response = api.v1PublicTrendSymbolGet(symbol);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Waiting List
+     *
+     * Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void v1PublicWaitingListPostTest() throws ApiException {
+        PublicWaitingListRequest body = null;
+        DefaultResponse response = api.v1PublicWaitingListPost(body);
 
         // TODO: test validations
     }

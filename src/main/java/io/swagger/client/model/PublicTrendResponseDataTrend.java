@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * PublicTrendResponseDataTrend
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-18T12:37:05.120-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-22T22:41:05.576-04:00")
 public class PublicTrendResponseDataTrend {
   @SerializedName("time_start")
   private BigDecimal timeStart = null;

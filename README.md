@@ -2,7 +2,7 @@
 
 Investabit
 - API version: 
-  - Build date: 2019-09-18T12:37:05.120-04:00
+  - Build date: 2019-10-22T22:41:05.576-04:00
 
 The Investabit API allows for access to all of the public facing services provided, including market data and forecasts.  ## General Overview  1. All API methods will be built to adhere to RESTful best practices as closely as possible. As such, all API calls will be made via the standard HTTP protocol using the GET/POST/PUT/DELETE request types.  2. Every request returns the status as a JSON response with the following   - success, true if it was successful   - code, the http status code (also in the response header)          200 if response is successful          400 if bad request          401 if authorization JWT is wrong or limit exceeded          404 wrong route          500 for any internal errors  - status, the status of the request, default **success**  - errors, an array of any relevant error details  3. For any requests that are not successful an error message is specified and returned as an array for the **errors** key in the JSON response.  4. All authentication uses JSON Web Tokens (JWT), which is set as the **Authorization** entry in the header, see the following for more details.     * http://jwt.io     * https://scotch.io/tutorials/the-anatomy-of-a-json-web-token
 
@@ -109,6 +109,7 @@ Class | Method | HTTP request | Description
 *PublicApi* | [**v1PublicPriceHistorySymbolPeriodIntervalGet**](docs/PublicApi.md#v1PublicPriceHistorySymbolPeriodIntervalGet) | **GET** /v1/public/price-history/{symbol}/{period}/{interval} | Price History
 *PublicApi* | [**v1PublicSymbolsGet**](docs/PublicApi.md#v1PublicSymbolsGet) | **GET** /v1/public/symbols | Symbols
 *PublicApi* | [**v1PublicTrendSymbolGet**](docs/PublicApi.md#v1PublicTrendSymbolGet) | **GET** /v1/public/trend/{symbol} | Trend
+*PublicApi* | [**v1PublicWaitingListPost**](docs/PublicApi.md#v1PublicWaitingListPost) | **POST** /v1/public/waiting-list | Waiting List
 
 
 ## Documentation for Models
@@ -133,8 +134,10 @@ Class | Method | HTTP request | Description
  - [PublicTrendResponse](docs/PublicTrendResponse.md)
  - [PublicTrendResponseData](docs/PublicTrendResponseData.md)
  - [PublicTrendResponseDataTrend](docs/PublicTrendResponseDataTrend.md)
+ - [PublicWaitingListRequest](docs/PublicWaitingListRequest.md)
  - [SymbolsRoute](docs/SymbolsRoute.md)
  - [TrendRoute](docs/TrendRoute.md)
+ - [WaitingListRoute](docs/WaitingListRoute.md)
 
 
 ## Documentation for Authorization

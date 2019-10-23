@@ -15,62 +15,12 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
- * PublicSymbolsResponseDataSymbols
+ * WaitingListRoute
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-22T22:41:05.576-04:00")
-public class PublicSymbolsResponseDataSymbols {
-  @SerializedName("name")
-  private String name = null;
-
-  @SerializedName("symbol")
-  private String symbol = null;
-
-  public PublicSymbolsResponseDataSymbols name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public PublicSymbolsResponseDataSymbols symbol(String symbol) {
-    this.symbol = symbol;
-    return this;
-  }
-
-   /**
-   * Get symbol
-   * @return symbol
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getSymbol() {
-    return symbol;
-  }
-
-  public void setSymbol(String symbol) {
-    this.symbol = symbol;
-  }
-
+public class WaitingListRoute {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -80,24 +30,20 @@ public class PublicSymbolsResponseDataSymbols {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PublicSymbolsResponseDataSymbols publicSymbolsResponseDataSymbols = (PublicSymbolsResponseDataSymbols) o;
-    return Objects.equals(this.name, publicSymbolsResponseDataSymbols.name) &&
-        Objects.equals(this.symbol, publicSymbolsResponseDataSymbols.symbol);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, symbol);
+    return Objects.hash();
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PublicSymbolsResponseDataSymbols {\n");
+    sb.append("class WaitingListRoute {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
     sb.append("}");
     return sb.toString();
   }

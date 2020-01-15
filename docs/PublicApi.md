@@ -1,6 +1,6 @@
 # PublicApi
 
-All URIs are relative to *https://api.investabit.com*
+All URIs are relative to *https://api.cryptoweather.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**v1PublicPriceHistorySymbolPeriodIntervalGet**](PublicApi.md#v1PublicPriceHistorySymbolPeriodIntervalGet) | **GET** /v1/public/price-history/{symbol}/{period}/{interval} | Price History
 [**v1PublicSymbolsGet**](PublicApi.md#v1PublicSymbolsGet) | **GET** /v1/public/symbols | Symbols
 [**v1PublicTrendSymbolGet**](PublicApi.md#v1PublicTrendSymbolGet) | **GET** /v1/public/trend/{symbol} | Trend
-[**v1PublicWaitingListPost**](PublicApi.md#v1PublicWaitingListPost) | **POST** /v1/public/waiting-list | Waiting List
 
 
 <a name="v1PublicPriceChangeSymbolGet"></a>
@@ -198,7 +197,7 @@ No authorization required
 
 Trend
 
-
+The trend response contains a collection of forecasts for different intervals with the following attributes.  + &#x60;time_start&#x60; start time of the period the forecast is applicable for  + &#x60;time_end&#x60; end time of the period the forecast is applicable for  + &#x60;interval&#x60; interval in hours that the forecast is applicable for  + &#x60;weighted_price&#x60; forecasted weighted price during the period  + &#x60;change_pct&#x60; percent change in price for forecasted weighted_price relative to current price  + &#x60;change_usd&#x60; dollar change in price for forecasted weighted_price relative to current price
 
 ### Example
 ```java
@@ -227,51 +226,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PublicTrendResponse**](PublicTrendResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="v1PublicWaitingListPost"></a>
-# **v1PublicWaitingListPost**
-> DefaultResponse v1PublicWaitingListPost(body)
-
-Waiting List
-
-Subscribe a user to the waiting list, &#x60;name&#x60; is not required.
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.PublicApi;
-
-
-PublicApi apiInstance = new PublicApi();
-PublicWaitingListRequest body = new PublicWaitingListRequest(); // PublicWaitingListRequest | 
-try {
-    DefaultResponse result = apiInstance.v1PublicWaitingListPost(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PublicApi#v1PublicWaitingListPost");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**PublicWaitingListRequest**](PublicWaitingListRequest.md)|  | [optional]
-
-### Return type
-
-[**DefaultResponse**](DefaultResponse.md)
 
 ### Authorization
 

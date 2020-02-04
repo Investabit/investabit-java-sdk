@@ -15,49 +15,12 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.PublicPriceChangeResponseDataPriceChange;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * PublicPriceChangeResponseData
+ * SummaryRoute
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-03T13:09:07.641-05:00")
-public class PublicPriceChangeResponseData {
-  @SerializedName("price_change")
-  private List<PublicPriceChangeResponseDataPriceChange> priceChange = new ArrayList<PublicPriceChangeResponseDataPriceChange>();
-
-  public PublicPriceChangeResponseData priceChange(List<PublicPriceChangeResponseDataPriceChange> priceChange) {
-    this.priceChange = priceChange;
-    return this;
-  }
-
-  public PublicPriceChangeResponseData addPriceChangeItem(PublicPriceChangeResponseDataPriceChange priceChangeItem) {
-    this.priceChange.add(priceChangeItem);
-    return this;
-  }
-
-   /**
-   * Get priceChange
-   * @return priceChange
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public List<PublicPriceChangeResponseDataPriceChange> getPriceChange() {
-    return priceChange;
-  }
-
-  public void setPriceChange(List<PublicPriceChangeResponseDataPriceChange> priceChange) {
-    this.priceChange = priceChange;
-  }
-
+public class SummaryRoute {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -67,22 +30,20 @@ public class PublicPriceChangeResponseData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PublicPriceChangeResponseData publicPriceChangeResponseData = (PublicPriceChangeResponseData) o;
-    return Objects.equals(this.priceChange, publicPriceChangeResponseData.priceChange);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(priceChange);
+    return Objects.hash();
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PublicPriceChangeResponseData {\n");
+    sb.append("class SummaryRoute {\n");
     
-    sb.append("    priceChange: ").append(toIndentedString(priceChange)).append("\n");
     sb.append("}");
     return sb.toString();
   }

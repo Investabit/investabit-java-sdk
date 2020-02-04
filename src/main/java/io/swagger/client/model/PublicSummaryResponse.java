@@ -22,40 +22,132 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.PublicPriceChangeResponseDataPriceChange;
+import io.swagger.client.model.PublicSummaryResponseData;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PublicPriceChangeResponseData
+ * PublicSummaryResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-03T13:09:07.641-05:00")
-public class PublicPriceChangeResponseData {
-  @SerializedName("price_change")
-  private List<PublicPriceChangeResponseDataPriceChange> priceChange = new ArrayList<PublicPriceChangeResponseDataPriceChange>();
+public class PublicSummaryResponse {
+  @SerializedName("success")
+  private Boolean success = null;
 
-  public PublicPriceChangeResponseData priceChange(List<PublicPriceChangeResponseDataPriceChange> priceChange) {
-    this.priceChange = priceChange;
-    return this;
-  }
+  @SerializedName("code")
+  private Integer code = null;
 
-  public PublicPriceChangeResponseData addPriceChangeItem(PublicPriceChangeResponseDataPriceChange priceChangeItem) {
-    this.priceChange.add(priceChangeItem);
+  @SerializedName("status")
+  private String status = null;
+
+  @SerializedName("data")
+  private List<PublicSummaryResponseData> data = new ArrayList<PublicSummaryResponseData>();
+
+  @SerializedName("errors")
+  private List<Object> errors = null;
+
+  public PublicSummaryResponse success(Boolean success) {
+    this.success = success;
     return this;
   }
 
    /**
-   * Get priceChange
-   * @return priceChange
+   * Get success
+   * @return success
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<PublicPriceChangeResponseDataPriceChange> getPriceChange() {
-    return priceChange;
+  public Boolean isSuccess() {
+    return success;
   }
 
-  public void setPriceChange(List<PublicPriceChangeResponseDataPriceChange> priceChange) {
-    this.priceChange = priceChange;
+  public void setSuccess(Boolean success) {
+    this.success = success;
+  }
+
+  public PublicSummaryResponse code(Integer code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * Get code
+   * @return code
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getCode() {
+    return code;
+  }
+
+  public void setCode(Integer code) {
+    this.code = code;
+  }
+
+  public PublicSummaryResponse status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Get status
+   * @return status
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public PublicSummaryResponse data(List<PublicSummaryResponseData> data) {
+    this.data = data;
+    return this;
+  }
+
+  public PublicSummaryResponse addDataItem(PublicSummaryResponseData dataItem) {
+    this.data.add(dataItem);
+    return this;
+  }
+
+   /**
+   * Get data
+   * @return data
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public List<PublicSummaryResponseData> getData() {
+    return data;
+  }
+
+  public void setData(List<PublicSummaryResponseData> data) {
+    this.data = data;
+  }
+
+  public PublicSummaryResponse errors(List<Object> errors) {
+    this.errors = errors;
+    return this;
+  }
+
+  public PublicSummaryResponse addErrorsItem(Object errorsItem) {
+    if (this.errors == null) {
+      this.errors = new ArrayList<Object>();
+    }
+    this.errors.add(errorsItem);
+    return this;
+  }
+
+   /**
+   * Get errors
+   * @return errors
+  **/
+  @ApiModelProperty(value = "")
+  public List<Object> getErrors() {
+    return errors;
+  }
+
+  public void setErrors(List<Object> errors) {
+    this.errors = errors;
   }
 
 
@@ -67,22 +159,30 @@ public class PublicPriceChangeResponseData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PublicPriceChangeResponseData publicPriceChangeResponseData = (PublicPriceChangeResponseData) o;
-    return Objects.equals(this.priceChange, publicPriceChangeResponseData.priceChange);
+    PublicSummaryResponse publicSummaryResponse = (PublicSummaryResponse) o;
+    return Objects.equals(this.success, publicSummaryResponse.success) &&
+        Objects.equals(this.code, publicSummaryResponse.code) &&
+        Objects.equals(this.status, publicSummaryResponse.status) &&
+        Objects.equals(this.data, publicSummaryResponse.data) &&
+        Objects.equals(this.errors, publicSummaryResponse.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(priceChange);
+    return Objects.hash(success, code, status, data, errors);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PublicPriceChangeResponseData {\n");
+    sb.append("class PublicSummaryResponse {\n");
     
-    sb.append("    priceChange: ").append(toIndentedString(priceChange)).append("\n");
+    sb.append("    success: ").append(toIndentedString(success)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

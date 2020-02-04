@@ -22,40 +22,75 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.PublicPriceChangeResponseDataPriceChange;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
 
 /**
- * PublicPriceChangeResponseData
+ * PublicSummaryResponseColor
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-03T13:09:07.641-05:00")
-public class PublicPriceChangeResponseData {
-  @SerializedName("price_change")
-  private List<PublicPriceChangeResponseDataPriceChange> priceChange = new ArrayList<PublicPriceChangeResponseDataPriceChange>();
+public class PublicSummaryResponseColor {
+  @SerializedName("b")
+  private BigDecimal b = null;
 
-  public PublicPriceChangeResponseData priceChange(List<PublicPriceChangeResponseDataPriceChange> priceChange) {
-    this.priceChange = priceChange;
-    return this;
-  }
+  @SerializedName("g")
+  private BigDecimal g = null;
 
-  public PublicPriceChangeResponseData addPriceChangeItem(PublicPriceChangeResponseDataPriceChange priceChangeItem) {
-    this.priceChange.add(priceChangeItem);
+  @SerializedName("r")
+  private BigDecimal r = null;
+
+  public PublicSummaryResponseColor b(BigDecimal b) {
+    this.b = b;
     return this;
   }
 
    /**
-   * Get priceChange
-   * @return priceChange
+   * Get b
+   * @return b
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<PublicPriceChangeResponseDataPriceChange> getPriceChange() {
-    return priceChange;
+  public BigDecimal getB() {
+    return b;
   }
 
-  public void setPriceChange(List<PublicPriceChangeResponseDataPriceChange> priceChange) {
-    this.priceChange = priceChange;
+  public void setB(BigDecimal b) {
+    this.b = b;
+  }
+
+  public PublicSummaryResponseColor g(BigDecimal g) {
+    this.g = g;
+    return this;
+  }
+
+   /**
+   * Get g
+   * @return g
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public BigDecimal getG() {
+    return g;
+  }
+
+  public void setG(BigDecimal g) {
+    this.g = g;
+  }
+
+  public PublicSummaryResponseColor r(BigDecimal r) {
+    this.r = r;
+    return this;
+  }
+
+   /**
+   * Get r
+   * @return r
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public BigDecimal getR() {
+    return r;
+  }
+
+  public void setR(BigDecimal r) {
+    this.r = r;
   }
 
 
@@ -67,22 +102,26 @@ public class PublicPriceChangeResponseData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PublicPriceChangeResponseData publicPriceChangeResponseData = (PublicPriceChangeResponseData) o;
-    return Objects.equals(this.priceChange, publicPriceChangeResponseData.priceChange);
+    PublicSummaryResponseColor publicSummaryResponseColor = (PublicSummaryResponseColor) o;
+    return Objects.equals(this.b, publicSummaryResponseColor.b) &&
+        Objects.equals(this.g, publicSummaryResponseColor.g) &&
+        Objects.equals(this.r, publicSummaryResponseColor.r);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(priceChange);
+    return Objects.hash(b, g, r);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PublicPriceChangeResponseData {\n");
+    sb.append("class PublicSummaryResponseColor {\n");
     
-    sb.append("    priceChange: ").append(toIndentedString(priceChange)).append("\n");
+    sb.append("    b: ").append(toIndentedString(b)).append("\n");
+    sb.append("    g: ").append(toIndentedString(g)).append("\n");
+    sb.append("    r: ").append(toIndentedString(r)).append("\n");
     sb.append("}");
     return sb.toString();
   }

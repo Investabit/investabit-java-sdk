@@ -18,6 +18,7 @@ import io.swagger.client.model.DefaultResponse;
 import io.swagger.client.model.PublicPriceChangeResponse;
 import io.swagger.client.model.PublicPriceCurrentResponse;
 import io.swagger.client.model.PublicPriceHistoryResponse;
+import io.swagger.client.model.PublicSummaryResponse;
 import io.swagger.client.model.PublicSymbolsResponse;
 import io.swagger.client.model.PublicTrendResponse;
 import org.junit.Test;
@@ -83,6 +84,21 @@ public class PublicApiTest {
         String period = null;
         String interval = null;
         PublicPriceHistoryResponse response = api.v1PublicPriceHistorySymbolPeriodIntervalGet(symbol, period, interval);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Summary
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void v1PublicSummaryGetTest() throws ApiException {
+        PublicSummaryResponse response = api.v1PublicSummaryGet();
 
         // TODO: test validations
     }

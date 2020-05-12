@@ -15,49 +15,12 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.PrivateTrendTabularResponseDataTrendTabular;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * PrivateTrendTabularResponseData
+ * ForecastTimeRoute
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T15:47:40.106-04:00")
-public class PrivateTrendTabularResponseData {
-  @SerializedName("trend_tabular")
-  private List<PrivateTrendTabularResponseDataTrendTabular> trendTabular = new ArrayList<PrivateTrendTabularResponseDataTrendTabular>();
-
-  public PrivateTrendTabularResponseData trendTabular(List<PrivateTrendTabularResponseDataTrendTabular> trendTabular) {
-    this.trendTabular = trendTabular;
-    return this;
-  }
-
-  public PrivateTrendTabularResponseData addTrendTabularItem(PrivateTrendTabularResponseDataTrendTabular trendTabularItem) {
-    this.trendTabular.add(trendTabularItem);
-    return this;
-  }
-
-   /**
-   * Get trendTabular
-   * @return trendTabular
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public List<PrivateTrendTabularResponseDataTrendTabular> getTrendTabular() {
-    return trendTabular;
-  }
-
-  public void setTrendTabular(List<PrivateTrendTabularResponseDataTrendTabular> trendTabular) {
-    this.trendTabular = trendTabular;
-  }
-
+public class ForecastTimeRoute {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -67,22 +30,20 @@ public class PrivateTrendTabularResponseData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PrivateTrendTabularResponseData privateTrendTabularResponseData = (PrivateTrendTabularResponseData) o;
-    return Objects.equals(this.trendTabular, privateTrendTabularResponseData.trendTabular);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trendTabular);
+    return Objects.hash();
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PrivateTrendTabularResponseData {\n");
+    sb.append("class ForecastTimeRoute {\n");
     
-    sb.append("    trendTabular: ").append(toIndentedString(trendTabular)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -22,40 +22,127 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.PrivateTrendTabularResponseDataTrendTabular;
+import io.swagger.client.model.PrivateForecastTimeResponseData;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PrivateTrendTabularResponseData
+ * PrivateForecastTimeResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T15:47:40.106-04:00")
-public class PrivateTrendTabularResponseData {
-  @SerializedName("trend_tabular")
-  private List<PrivateTrendTabularResponseDataTrendTabular> trendTabular = new ArrayList<PrivateTrendTabularResponseDataTrendTabular>();
+public class PrivateForecastTimeResponse {
+  @SerializedName("success")
+  private Boolean success = null;
 
-  public PrivateTrendTabularResponseData trendTabular(List<PrivateTrendTabularResponseDataTrendTabular> trendTabular) {
-    this.trendTabular = trendTabular;
-    return this;
-  }
+  @SerializedName("code")
+  private Integer code = null;
 
-  public PrivateTrendTabularResponseData addTrendTabularItem(PrivateTrendTabularResponseDataTrendTabular trendTabularItem) {
-    this.trendTabular.add(trendTabularItem);
+  @SerializedName("status")
+  private String status = null;
+
+  @SerializedName("data")
+  private PrivateForecastTimeResponseData data = null;
+
+  @SerializedName("errors")
+  private List<Object> errors = null;
+
+  public PrivateForecastTimeResponse success(Boolean success) {
+    this.success = success;
     return this;
   }
 
    /**
-   * Get trendTabular
-   * @return trendTabular
+   * Get success
+   * @return success
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<PrivateTrendTabularResponseDataTrendTabular> getTrendTabular() {
-    return trendTabular;
+  public Boolean isSuccess() {
+    return success;
   }
 
-  public void setTrendTabular(List<PrivateTrendTabularResponseDataTrendTabular> trendTabular) {
-    this.trendTabular = trendTabular;
+  public void setSuccess(Boolean success) {
+    this.success = success;
+  }
+
+  public PrivateForecastTimeResponse code(Integer code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * Get code
+   * @return code
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getCode() {
+    return code;
+  }
+
+  public void setCode(Integer code) {
+    this.code = code;
+  }
+
+  public PrivateForecastTimeResponse status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Get status
+   * @return status
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public PrivateForecastTimeResponse data(PrivateForecastTimeResponseData data) {
+    this.data = data;
+    return this;
+  }
+
+   /**
+   * Get data
+   * @return data
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public PrivateForecastTimeResponseData getData() {
+    return data;
+  }
+
+  public void setData(PrivateForecastTimeResponseData data) {
+    this.data = data;
+  }
+
+  public PrivateForecastTimeResponse errors(List<Object> errors) {
+    this.errors = errors;
+    return this;
+  }
+
+  public PrivateForecastTimeResponse addErrorsItem(Object errorsItem) {
+    if (this.errors == null) {
+      this.errors = new ArrayList<Object>();
+    }
+    this.errors.add(errorsItem);
+    return this;
+  }
+
+   /**
+   * Get errors
+   * @return errors
+  **/
+  @ApiModelProperty(value = "")
+  public List<Object> getErrors() {
+    return errors;
+  }
+
+  public void setErrors(List<Object> errors) {
+    this.errors = errors;
   }
 
 
@@ -67,22 +154,30 @@ public class PrivateTrendTabularResponseData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PrivateTrendTabularResponseData privateTrendTabularResponseData = (PrivateTrendTabularResponseData) o;
-    return Objects.equals(this.trendTabular, privateTrendTabularResponseData.trendTabular);
+    PrivateForecastTimeResponse privateForecastTimeResponse = (PrivateForecastTimeResponse) o;
+    return Objects.equals(this.success, privateForecastTimeResponse.success) &&
+        Objects.equals(this.code, privateForecastTimeResponse.code) &&
+        Objects.equals(this.status, privateForecastTimeResponse.status) &&
+        Objects.equals(this.data, privateForecastTimeResponse.data) &&
+        Objects.equals(this.errors, privateForecastTimeResponse.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trendTabular);
+    return Objects.hash(success, code, status, data, errors);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PrivateTrendTabularResponseData {\n");
+    sb.append("class PrivateForecastTimeResponse {\n");
     
-    sb.append("    trendTabular: ").append(toIndentedString(trendTabular)).append("\n");
+    sb.append("    success: ").append(toIndentedString(success)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -22,40 +22,33 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.PrivateTrendTabularResponseDataTrendTabular;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigDecimal;
 
 /**
- * PrivateTrendTabularResponseData
+ * PrivateForecastTimeResponseData
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T15:47:40.106-04:00")
-public class PrivateTrendTabularResponseData {
-  @SerializedName("trend_tabular")
-  private List<PrivateTrendTabularResponseDataTrendTabular> trendTabular = new ArrayList<PrivateTrendTabularResponseDataTrendTabular>();
+public class PrivateForecastTimeResponseData {
+  @SerializedName("forecast_time")
+  private BigDecimal forecastTime = null;
 
-  public PrivateTrendTabularResponseData trendTabular(List<PrivateTrendTabularResponseDataTrendTabular> trendTabular) {
-    this.trendTabular = trendTabular;
-    return this;
-  }
-
-  public PrivateTrendTabularResponseData addTrendTabularItem(PrivateTrendTabularResponseDataTrendTabular trendTabularItem) {
-    this.trendTabular.add(trendTabularItem);
+  public PrivateForecastTimeResponseData forecastTime(BigDecimal forecastTime) {
+    this.forecastTime = forecastTime;
     return this;
   }
 
    /**
-   * Get trendTabular
-   * @return trendTabular
+   * Get forecastTime
+   * @return forecastTime
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<PrivateTrendTabularResponseDataTrendTabular> getTrendTabular() {
-    return trendTabular;
+  public BigDecimal getForecastTime() {
+    return forecastTime;
   }
 
-  public void setTrendTabular(List<PrivateTrendTabularResponseDataTrendTabular> trendTabular) {
-    this.trendTabular = trendTabular;
+  public void setForecastTime(BigDecimal forecastTime) {
+    this.forecastTime = forecastTime;
   }
 
 
@@ -67,22 +60,22 @@ public class PrivateTrendTabularResponseData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PrivateTrendTabularResponseData privateTrendTabularResponseData = (PrivateTrendTabularResponseData) o;
-    return Objects.equals(this.trendTabular, privateTrendTabularResponseData.trendTabular);
+    PrivateForecastTimeResponseData privateForecastTimeResponseData = (PrivateForecastTimeResponseData) o;
+    return Objects.equals(this.forecastTime, privateForecastTimeResponseData.forecastTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trendTabular);
+    return Objects.hash(forecastTime);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PrivateTrendTabularResponseData {\n");
+    sb.append("class PrivateForecastTimeResponseData {\n");
     
-    sb.append("    trendTabular: ").append(toIndentedString(trendTabular)).append("\n");
+    sb.append("    forecastTime: ").append(toIndentedString(forecastTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

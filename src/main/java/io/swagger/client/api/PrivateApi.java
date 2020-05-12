@@ -30,6 +30,7 @@ import java.io.IOException;
 import io.swagger.client.model.DefaultResponse;
 import io.swagger.client.model.PrivateAccuracyResponse;
 import io.swagger.client.model.PrivateForecastResponse;
+import io.swagger.client.model.PrivateForecastTimeResponse;
 import io.swagger.client.model.PrivateTrendTabularResponse;
 import io.swagger.client.model.PublicTrendResponse;
 
@@ -355,6 +356,161 @@ public class PrivateApi {
 
         com.squareup.okhttp.Call call = v1PrivateForecastSymbolIntervalGetValidateBeforeCall(symbol, interval, cookie, xCsrf, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PrivateForecastResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for v1PrivateForecastTimeSymbolIntervalPeriodGet
+     * @param symbol The cryptocurrency symbol. (required)
+     * @param interval The forecast interval, 1h or 1d. (required)
+     * @param period The period for computing the error bounds, typically 7d or 30d. (required)
+     * @param cookie e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 (optional)
+     * @param xCsrf e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call v1PrivateForecastTimeSymbolIntervalPeriodGetCall(String symbol, String interval, String period, String cookie, String xCsrf, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/private/forecast-time/{symbol}/{interval}/{period}"
+            .replaceAll("\\{" + "symbol" + "\\}", apiClient.escapeString(symbol.toString()))
+            .replaceAll("\\{" + "interval" + "\\}", apiClient.escapeString(interval.toString()))
+            .replaceAll("\\{" + "period" + "\\}", apiClient.escapeString(period.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (cookie != null)
+        localVarHeaderParams.put("Cookie", apiClient.parameterToString(cookie));
+        if (xCsrf != null)
+        localVarHeaderParams.put("X-csrf", apiClient.parameterToString(xCsrf));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call v1PrivateForecastTimeSymbolIntervalPeriodGetValidateBeforeCall(String symbol, String interval, String period, String cookie, String xCsrf, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'symbol' is set
+        if (symbol == null) {
+            throw new ApiException("Missing the required parameter 'symbol' when calling v1PrivateForecastTimeSymbolIntervalPeriodGet(Async)");
+        }
+        
+        // verify the required parameter 'interval' is set
+        if (interval == null) {
+            throw new ApiException("Missing the required parameter 'interval' when calling v1PrivateForecastTimeSymbolIntervalPeriodGet(Async)");
+        }
+        
+        // verify the required parameter 'period' is set
+        if (period == null) {
+            throw new ApiException("Missing the required parameter 'period' when calling v1PrivateForecastTimeSymbolIntervalPeriodGet(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = v1PrivateForecastTimeSymbolIntervalPeriodGetCall(symbol, interval, period, cookie, xCsrf, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Forecast Time
+     * 
+     * @param symbol The cryptocurrency symbol. (required)
+     * @param interval The forecast interval, 1h or 1d. (required)
+     * @param period The period for computing the error bounds, typically 7d or 30d. (required)
+     * @param cookie e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 (optional)
+     * @param xCsrf e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)
+     * @return PrivateForecastTimeResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PrivateForecastTimeResponse v1PrivateForecastTimeSymbolIntervalPeriodGet(String symbol, String interval, String period, String cookie, String xCsrf) throws ApiException {
+        ApiResponse<PrivateForecastTimeResponse> resp = v1PrivateForecastTimeSymbolIntervalPeriodGetWithHttpInfo(symbol, interval, period, cookie, xCsrf);
+        return resp.getData();
+    }
+
+    /**
+     * Forecast Time
+     * 
+     * @param symbol The cryptocurrency symbol. (required)
+     * @param interval The forecast interval, 1h or 1d. (required)
+     * @param period The period for computing the error bounds, typically 7d or 30d. (required)
+     * @param cookie e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 (optional)
+     * @param xCsrf e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)
+     * @return ApiResponse&lt;PrivateForecastTimeResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PrivateForecastTimeResponse> v1PrivateForecastTimeSymbolIntervalPeriodGetWithHttpInfo(String symbol, String interval, String period, String cookie, String xCsrf) throws ApiException {
+        com.squareup.okhttp.Call call = v1PrivateForecastTimeSymbolIntervalPeriodGetValidateBeforeCall(symbol, interval, period, cookie, xCsrf, null, null);
+        Type localVarReturnType = new TypeToken<PrivateForecastTimeResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Forecast Time (asynchronously)
+     * 
+     * @param symbol The cryptocurrency symbol. (required)
+     * @param interval The forecast interval, 1h or 1d. (required)
+     * @param period The period for computing the error bounds, typically 7d or 30d. (required)
+     * @param cookie e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 (optional)
+     * @param xCsrf e.g. b1820141-1bad-4a9c-93c0-52022817ce89 (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call v1PrivateForecastTimeSymbolIntervalPeriodGetAsync(String symbol, String interval, String period, String cookie, String xCsrf, final ApiCallback<PrivateForecastTimeResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = v1PrivateForecastTimeSymbolIntervalPeriodGetValidateBeforeCall(symbol, interval, period, cookie, xCsrf, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PrivateForecastTimeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

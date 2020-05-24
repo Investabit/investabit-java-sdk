@@ -5,6 +5,7 @@ All URIs are relative to *https://api.cryptoweather.ai*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**v1PrivateAccuracySymbolIntervalPeriodGet**](PrivateApi.md#v1PrivateAccuracySymbolIntervalPeriodGet) | **GET** /v1/private/accuracy/{symbol}/{interval}/{period} | Accuracy
+[**v1PrivateForecastAccuracySymbolIntervalPeriodGet**](PrivateApi.md#v1PrivateForecastAccuracySymbolIntervalPeriodGet) | **GET** /v1/private/forecast-accuracy/{symbol}/{interval}/{period} | Forecast Accuracy
 [**v1PrivateForecastSymbolIntervalGet**](PrivateApi.md#v1PrivateForecastSymbolIntervalGet) | **GET** /v1/private/forecast/{symbol}/{interval} | Forecast
 [**v1PrivateForecastTimeSymbolIntervalPeriodGet**](PrivateApi.md#v1PrivateForecastTimeSymbolIntervalPeriodGet) | **GET** /v1/private/forecast-time/{symbol}/{interval}/{period} | Forecast Time
 [**v1PrivateTrendSymbolGet**](PrivateApi.md#v1PrivateTrendSymbolGet) | **GET** /v1/private/trend/{symbol} | Trend
@@ -62,6 +63,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PrivateAccuracyResponse**](PrivateAccuracyResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="v1PrivateForecastAccuracySymbolIntervalPeriodGet"></a>
+# **v1PrivateForecastAccuracySymbolIntervalPeriodGet**
+> PrivateForecastAccuracyResponse v1PrivateForecastAccuracySymbolIntervalPeriodGet(symbol, interval, period, cookie, xCsrf)
+
+Forecast Accuracy
+
+
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.PrivateApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2
+OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+PrivateApi apiInstance = new PrivateApi();
+String symbol = "btc"; // String | The cryptocurrency symbol.
+String interval = "1h"; // String | The forecast interval, 1h or 1d.
+String period = "7d"; // String | The period for computing the error bounds, typically 7d or 30d.
+String cookie = "csrf=b1820141-1bad-4a9c-93c0-52022817ce89"; // String | e.g. csrf=b1820141-1bad-4a9c-93c0-52022817ce89
+String xCsrf = "b1820141-1bad-4a9c-93c0-52022817ce89"; // String | e.g. b1820141-1bad-4a9c-93c0-52022817ce89
+try {
+    PrivateForecastAccuracyResponse result = apiInstance.v1PrivateForecastAccuracySymbolIntervalPeriodGet(symbol, interval, period, cookie, xCsrf);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PrivateApi#v1PrivateForecastAccuracySymbolIntervalPeriodGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| The cryptocurrency symbol. |
+ **interval** | **String**| The forecast interval, 1h or 1d. |
+ **period** | **String**| The period for computing the error bounds, typically 7d or 30d. |
+ **cookie** | **String**| e.g. csrf&#x3D;b1820141-1bad-4a9c-93c0-52022817ce89 | [optional]
+ **xCsrf** | **String**| e.g. b1820141-1bad-4a9c-93c0-52022817ce89 | [optional]
+
+### Return type
+
+[**PrivateForecastAccuracyResponse**](PrivateForecastAccuracyResponse.md)
 
 ### Authorization
 

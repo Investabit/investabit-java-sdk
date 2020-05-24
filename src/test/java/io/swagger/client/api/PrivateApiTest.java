@@ -16,6 +16,7 @@ package io.swagger.client.api;
 import io.swagger.client.ApiException;
 import io.swagger.client.model.DefaultResponse;
 import io.swagger.client.model.PrivateAccuracyResponse;
+import io.swagger.client.model.PrivateForecastAccuracyResponse;
 import io.swagger.client.model.PrivateForecastResponse;
 import io.swagger.client.model.PrivateForecastTimeResponse;
 import io.swagger.client.model.PrivateTrendTabularResponse;
@@ -53,6 +54,26 @@ public class PrivateApiTest {
         String cookie = null;
         String xCsrf = null;
         PrivateAccuracyResponse response = api.v1PrivateAccuracySymbolIntervalPeriodGet(symbol, interval, period, cookie, xCsrf);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Forecast Accuracy
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void v1PrivateForecastAccuracySymbolIntervalPeriodGetTest() throws ApiException {
+        String symbol = null;
+        String interval = null;
+        String period = null;
+        String cookie = null;
+        String xCsrf = null;
+        PrivateForecastAccuracyResponse response = api.v1PrivateForecastAccuracySymbolIntervalPeriodGet(symbol, interval, period, cookie, xCsrf);
 
         // TODO: test validations
     }

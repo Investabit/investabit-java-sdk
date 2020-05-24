@@ -22,57 +22,130 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.PrivateForecastAccuracyResponseData;
 import java.io.IOException;
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * PublicPriceHistoryResponseDataHistory
+ * PrivateForecastAccuracyResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-24T00:55:27.805-04:00")
 
 
 
-public class PublicPriceHistoryResponseDataHistory {
-  @SerializedName("time")
-  private BigDecimal time = null;
+public class PrivateForecastAccuracyResponse {
+  @SerializedName("success")
+  private Boolean success = null;
 
-  @SerializedName("price")
-  private BigDecimal price = null;
+  @SerializedName("code")
+  private Integer code = null;
 
-  public PublicPriceHistoryResponseDataHistory time(BigDecimal time) {
-    this.time = time;
+  @SerializedName("status")
+  private String status = null;
+
+  @SerializedName("data")
+  private PrivateForecastAccuracyResponseData data = null;
+
+  @SerializedName("errors")
+  private List<Object> errors = null;
+
+  public PrivateForecastAccuracyResponse success(Boolean success) {
+    this.success = success;
     return this;
   }
 
    /**
-   * Get time
-   * @return time
+   * Get success
+   * @return success
   **/
   @ApiModelProperty(required = true, value = "")
-  public BigDecimal getTime() {
-    return time;
+  public Boolean isSuccess() {
+    return success;
   }
 
-  public void setTime(BigDecimal time) {
-    this.time = time;
+  public void setSuccess(Boolean success) {
+    this.success = success;
   }
 
-  public PublicPriceHistoryResponseDataHistory price(BigDecimal price) {
-    this.price = price;
+  public PrivateForecastAccuracyResponse code(Integer code) {
+    this.code = code;
     return this;
   }
 
    /**
-   * Get price
-   * @return price
+   * Get code
+   * @return code
   **/
   @ApiModelProperty(required = true, value = "")
-  public BigDecimal getPrice() {
-    return price;
+  public Integer getCode() {
+    return code;
   }
 
-  public void setPrice(BigDecimal price) {
-    this.price = price;
+  public void setCode(Integer code) {
+    this.code = code;
+  }
+
+  public PrivateForecastAccuracyResponse status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Get status
+   * @return status
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public PrivateForecastAccuracyResponse data(PrivateForecastAccuracyResponseData data) {
+    this.data = data;
+    return this;
+  }
+
+   /**
+   * Get data
+   * @return data
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public PrivateForecastAccuracyResponseData getData() {
+    return data;
+  }
+
+  public void setData(PrivateForecastAccuracyResponseData data) {
+    this.data = data;
+  }
+
+  public PrivateForecastAccuracyResponse errors(List<Object> errors) {
+    this.errors = errors;
+    return this;
+  }
+
+  public PrivateForecastAccuracyResponse addErrorsItem(Object errorsItem) {
+    if (this.errors == null) {
+      this.errors = new ArrayList<Object>();
+    }
+    this.errors.add(errorsItem);
+    return this;
+  }
+
+   /**
+   * Get errors
+   * @return errors
+  **/
+  @ApiModelProperty(value = "")
+  public List<Object> getErrors() {
+    return errors;
+  }
+
+  public void setErrors(List<Object> errors) {
+    this.errors = errors;
   }
 
 
@@ -84,24 +157,30 @@ public class PublicPriceHistoryResponseDataHistory {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PublicPriceHistoryResponseDataHistory publicPriceHistoryResponseDataHistory = (PublicPriceHistoryResponseDataHistory) o;
-    return Objects.equals(this.time, publicPriceHistoryResponseDataHistory.time) &&
-        Objects.equals(this.price, publicPriceHistoryResponseDataHistory.price);
+    PrivateForecastAccuracyResponse privateForecastAccuracyResponse = (PrivateForecastAccuracyResponse) o;
+    return Objects.equals(this.success, privateForecastAccuracyResponse.success) &&
+        Objects.equals(this.code, privateForecastAccuracyResponse.code) &&
+        Objects.equals(this.status, privateForecastAccuracyResponse.status) &&
+        Objects.equals(this.data, privateForecastAccuracyResponse.data) &&
+        Objects.equals(this.errors, privateForecastAccuracyResponse.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(time, price);
+    return Objects.hash(success, code, status, data, errors);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PublicPriceHistoryResponseDataHistory {\n");
+    sb.append("class PrivateForecastAccuracyResponse {\n");
     
-    sb.append("    time: ").append(toIndentedString(time)).append("\n");
-    sb.append("    price: ").append(toIndentedString(price)).append("\n");
+    sb.append("    success: ").append(toIndentedString(success)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

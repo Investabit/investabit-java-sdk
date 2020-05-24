@@ -17,13 +17,13 @@ import java.util.Objects;
 import java.util.Arrays;
 
 /**
- * AccuracyRoute
+ * ForecastAccuracyRoute
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-24T00:55:27.805-04:00")
 
 
 
-public class AccuracyRoute {
+public class ForecastAccuracyRoute {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -45,7 +45,7 @@ public class AccuracyRoute {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AccuracyRoute {\n");
+    sb.append("class ForecastAccuracyRoute {\n");
     
     sb.append("}");
     return sb.toString();

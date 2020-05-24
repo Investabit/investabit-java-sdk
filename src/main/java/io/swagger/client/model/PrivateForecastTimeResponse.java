@@ -30,7 +30,10 @@ import java.util.List;
 /**
  * PrivateForecastTimeResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-11T15:47:40.106-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-24T00:55:27.805-04:00")
+
+
+
 public class PrivateForecastTimeResponse {
   @SerializedName("success")
   private Boolean success = null;
